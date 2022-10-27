@@ -5,7 +5,7 @@ import Home from './features/home/pages/Home.js'
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Router>
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
