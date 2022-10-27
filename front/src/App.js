@@ -5,11 +5,19 @@ import Home from './features/home/pages/Home.js'
 
 function App() {
   return (
-    <div >
+    <div className="app-container">
+      <div className="header">
+        <img src={ logo } alt="green_house_logo" />
+        <menu>
+          <li>Blog</li>
+          <li>Nos partenaires</li>
+          <li>En savoir +</li>
+        </menu>
+      </div>
       <Router>
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<Home  />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
     </div>
