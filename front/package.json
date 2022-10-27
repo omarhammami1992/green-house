@@ -20,7 +20,6 @@
   },
   "eslintConfig": {
     "extends": [
-      "plugin:flowtype/recommended",
       "react-app",
       "react-app/jest"
     ]
