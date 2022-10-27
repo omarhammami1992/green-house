@@ -1,0 +1,38 @@
+.home {
+    display: flex;
+}
+
+.home-title {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-weight: bold
+}
+
+.home-img {
+    width: 700px;
+    height: 700px;
+}
+
+.home-left-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.home-btn {
+    opacity: 1;
+    padding: 25px 44px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    background-color: #2EA15E;
+    color: white;
+    cursor: pointer;
+    min-width: 206px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+}
