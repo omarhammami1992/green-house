@@ -1,7 +1,6 @@
 package com.soat.back.infrastructure;
 
 import com.soat.back.domain.port.PlantPort;
-import com.soat.back.domain.model.Allergy;
 import com.soat.back.domain.model.Location;
 import com.soat.back.domain.model.Plant;
 import org.springframework.stereotype.Repository;
@@ -28,7 +27,6 @@ public class JpaPlantAdapter implements PlantPort {
 
     private static Plant convertToPlant(JpaPlant jpaPlant) {
         List<Location> locations = buildLocations(jpaPlant);
-        List<Allergy> allergies = buildAllergies(jpaPlant);
         return new Plant(
                 jpaPlant.getName(),
                 jpaPlant.getDescription(),
@@ -37,9 +35,9 @@ public class JpaPlantAdapter implements PlantPort {
                 jpaPlant.getGardeningLevel(),
                 jpaPlant.isForbiddenForChildren(),
                 jpaPlant.isForbiddenForAnimals(),
-                jpaPlant.getMinTemperature(),
-                jpaPlant.getMaxTemperature(),
-                allergies
+                jpaPlant.getTemperature(),
+                jpaPlant.getImage(),
+                jpaPlant.getSize()
         );
     }
 
@@ -47,9 +45,4 @@ public class JpaPlantAdapter implements PlantPort {
         return Arrays.stream(jpaPlant.getLocations().split(SEPARATOR)).map(Location::valueOf).toList();
     }
 
-    private static List<Allergy> buildAllergies(JpaPlant jpaPlant) {
-        return Arrays.stream(jpaPlant.getAllergies().split(SEPARATOR))
-                .map(name -> !name.equals("") ? Allergy.valueOf(name) : null)
-                .toList();
-    }
 }

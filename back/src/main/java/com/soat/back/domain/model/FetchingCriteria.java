@@ -5,8 +5,7 @@ public record FetchingCriteria(Location location,
                                Integer gardeningLevel,
                                boolean hasChildren,
                                boolean hasAnimals,
-                               Integer minTemperature,
-                               Integer maxTemperature,
-                               Allergy allergy) {
+                               Temperature temperature,
+                               Integer size) {
 
 }
