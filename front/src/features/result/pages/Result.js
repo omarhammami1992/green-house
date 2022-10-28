@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 
 export default function Result() {
 
-    const [ results, setResults ] = useState([]);
+    const [results, setResults] = useState([]);
     const { state: searchRequest } = useLocation();
 
     useEffect(() => {
-        (async() => {
+        (async () => {
             const getResults = await fetch('http://localhost:8081/api/plant/fetch', {
                 method: 'POST',
                 body: JSON.stringify(searchRequest),
@@ -16,30 +16,29 @@ export default function Result() {
                     'Access-Control-Allow-Origin': '*'
                 },
             });
-
             const response = await getResults.json();
-            setResults(response);
+            setResults(response || []);
         })()
-    },[]);
+    }, [searchRequest]);
 
     const displayResult = (result) => {
         return <div className="plant">
-            <img className="image" src={ result.image } alt={ result.name }/>
+            <img className="image" src={result.image} alt={result.name} />
             <div className="description">
-                <h2>{ result.name }</h2>
-                <p>{ result.description }</p>
+                <h2>{result.name}</h2>
+                <p>{result.description}</p>
                 <button className="button purchase-btn">Commander</button>
             </div>
         </div>
     };
 
-    return <div className="result-page-container">
+    return (results.length ? <div className="result-page-container">
         <div className="result-list">
             <h1>Voici la liste de vos plantes idéales</h1>
-            { results.map(result => displayResult(result)) }
+            {results.map(result => displayResult(result))}
         </div>
         <div className="right-image">
             <button className="button">Découvrir le blog</button>
         </div>
-    </div>;
+    </div> : null);
 }
