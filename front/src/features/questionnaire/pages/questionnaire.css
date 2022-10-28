@@ -1,0 +1,40 @@
+.step-question {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+
+.step-responses {
+    display: flex;
+    justify-content: space-around;
+}
+
+.response {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    height: 300px;
+    width: 100%;
+    background-color: red;
+    margin-bottom: 20px;
+}
+
+.response-btn {
+    width: 100%;
+    padding: 20px 44px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    background-color: #2EA15E;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}

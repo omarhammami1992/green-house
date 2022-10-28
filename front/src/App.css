@@ -1,4 +1,5 @@
 @import url('./features/home/pages/home.css');
+@import url('./features/questionnaire/pages/questionnaire.css');
 
 .header {
   display: flex;
