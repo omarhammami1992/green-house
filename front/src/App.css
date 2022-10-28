@@ -1,5 +1,7 @@
 @import url('./features/home/pages/home.css');
 @import url('./features/questionnaire/pages/questionnaire.css');
+@import url('./features/result/pages/result.css');
+
 
 .header {
   display: flex;
