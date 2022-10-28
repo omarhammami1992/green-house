@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
 export default function Result() {
@@ -32,13 +32,25 @@ export default function Result() {
         </div>
     };
 
-    return (results.length ? <div className="result-page-container">
-        <div className="result-list">
+    const displayEmpty = () => {
+        return <div className="empty-alert">
+            <h1>
+                Oups... Nous n'avons pas trouvé ta plante idéale, merci de remplir le formulaire une nouvelle fois !
+            </h1>
+
+            <Link to="/questionnaire">
+                <button className="button">Aller vers le questionnaire</button>
+            </Link>
+        </div>
+    }
+
+    return <div className="result-page-container">
+        { results.length ?<div className="result-list">
             <h1>Voici la liste de vos plantes idéales</h1>
             {results.map(result => displayResult(result))}
-        </div>
+        </div> : displayEmpty() }
         <div className="right-image">
             <button className="button">Découvrir le blog</button>
         </div>
-    </div> : null);
+    </div>;
 }
