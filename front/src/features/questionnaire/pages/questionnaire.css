@@ -22,8 +22,11 @@
 .img {
     height: 300px;
     width: 100%;
-    background-color: red;
+    background-color: white;
     margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .response-btn {
