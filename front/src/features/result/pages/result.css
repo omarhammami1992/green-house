@@ -1,0 +1,71 @@
+.result-page-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.result-list h1 {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.plant {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 10px 10px 10px #00000029;
+    margin-bottom: 10px;
+    width: 880px;
+    display: flex;
+}
+
+.plant .image {
+    width: 200px;
+    background-color: red;
+}
+
+.plant .description {
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.plant .description h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.plant .description p {
+    margin-top: 0;
+}
+
+button {
+    padding: 15px 44px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    background-color: #2EA15E;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.purchase-btn {
+    align-self: flex-end;
+}
+
+.right-image {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url('../../../assets/home-img.png');
+    padding-bottom: 20px;
+}

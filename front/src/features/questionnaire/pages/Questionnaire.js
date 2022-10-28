@@ -12,13 +12,12 @@ export default function Questionnaire() {
         formStepState.forEach(s => {
             bodySearch[s.questionCode] = s.selectedResponseValue;
         });
-        console.log('bodySearch ',bodySearch);
         return bodySearch;
     };
 
     const navigateToResult = (formStepState) => {
         const searchRqst = buildSearchRqst(formStepState);
-        navigate("/result", { searchRqst });
+        navigate("/result", { state: searchRqst });
     };
 
     const saveStepResponseAndGoToTheNextStep = (response) => {

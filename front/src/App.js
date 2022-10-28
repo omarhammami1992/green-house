@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, Link, useNavigate } from 'react-router-dom';
 import Home from './features/home/pages/Home.js'
 import Questionnaire from './features/questionnaire/pages/Questionnaire';
+import Result from './features/result/pages/Result';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
+          <Route path="/result" element={<Result />} />
         </Routes>
       </Router>
     </div>

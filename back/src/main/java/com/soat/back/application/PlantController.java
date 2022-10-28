@@ -3,10 +3,7 @@ package com.soat.back.application;
 import com.soat.back.domain.use_case.FetchPlant;
 import com.soat.back.domain.model.FetchingCriteria;
 import com.soat.back.domain.model.Plant;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +19,7 @@ public class PlantController {
     }
 
     @PostMapping("/fetch")
+    @CrossOrigin(origins = "http://localhost:3000" )
     public List<PlantJson> fetchByCriteria(@RequestBody FetchingCriteria fetchingCriteria){
         final List<Plant> plants = fetchPlant.execute(fetchingCriteria);
         return plants.stream()
