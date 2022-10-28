@@ -35,4 +35,10 @@
     border: none;
     font-size: 20px;
     font-weight: bold;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+
+.home-btn:hover {
+    transform: scale(1.05);
 }

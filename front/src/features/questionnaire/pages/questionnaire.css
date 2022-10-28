@@ -37,7 +37,13 @@
     background-color: #2EA15E;
     color: white;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.2s;
+}
+
+.response-btn:hover {
+    transform: scale(1.05);
 }
