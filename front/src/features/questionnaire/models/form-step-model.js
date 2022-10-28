@@ -49,16 +49,16 @@ export const formStepModel = [
     },
     {
         questionCode: 'location',
-        questionLabel: "OU SOUHAITEZ VOUS METTRE VOTRE PLANTE ?",
+        questionLabel: "OÙ SOUHAITEZ VOUS METTRE VOTRE PLANTE ?",
         responses: [{
             imgSrc: question2Image1,
             value: "INSIDE",
-            label: "INTÉRIEURE"
+            label: "INTÉRIEUR"
         },
         {
             imgSrc: question2Image2,
             value: "GARDEN",
-            label: "EXTÉRIEURE"
+            label: "EXTÉRIEUR"
         },
         {
             imgSrc: question2Image3,
@@ -145,7 +145,7 @@ export const formStepModel = [
     },
     {
         questionCode: 'temperature',
-        questionLabel: "TEMPÉRATURE OU LA PLANTE SERA PLACÉE",
+        questionLabel: "TEMPÉRATURE OÙ LA PLANTE SERA PLACÉE",
         responses: [
             {
                 imgSrc: question7Image1,
