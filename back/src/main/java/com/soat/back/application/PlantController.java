@@ -22,8 +22,15 @@ public class PlantController {
     }
 
     @PostMapping("/fetch")
-    public List<Plant> fetchByCriteria(@RequestBody FetchingCriteria fetchingCriteria){
-        return fetchPlant.execute(fetchingCriteria);
+    public List<PlantJson> fetchByCriteria(@RequestBody FetchingCriteria fetchingCriteria){
+        final List<Plant> plants = fetchPlant.execute(fetchingCriteria);
+        return plants.stream()
+                .map(PlantController::convertToPlantJson)
+                .toList();
 
+    }
+
+    private static PlantJson convertToPlantJson(Plant plant) {
+        return new PlantJson(plant.name(), plant.description(), plant.image());
     }
 }

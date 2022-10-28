@@ -23,9 +23,8 @@ public class FetchPlant {
                 .filter(plant -> plant.gardeningLevel() <= fetchingCriteria.gardeningLevel())
                 .filter(plant -> plant.forbiddenForChildren() != fetchingCriteria.hasChildren())
                 .filter(plant -> plant.forbiddenForAnimals() != fetchingCriteria.hasAnimals())
-                .filter(plant -> plant.minTemperature() <= fetchingCriteria.minTemperature())
-                .filter(plant -> plant.maxTemperature() >= fetchingCriteria.maxTemperature())
-                .filter(plant -> fetchingCriteria.allergy() == null || !plant.allergies().contains(fetchingCriteria.allergy()))
+                .filter(plant -> plant.temperature() == fetchingCriteria.temperature())
+                .filter(plant -> plant.size() <= fetchingCriteria.size())
                 .toList();
     }
 }

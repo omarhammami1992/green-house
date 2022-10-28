@@ -1,6 +1,7 @@
 package com.soat.back.infrastructure;
 
 import com.soat.back.domain.model.SunLevel;
+import com.soat.back.domain.model.Temperature;
 
 import javax.persistence.*;
 
@@ -34,13 +35,14 @@ public class JpaPlant {
     private boolean forbiddenForAnimals;
 
     @Column
-    private Integer minTemperature;
+    @Enumerated(EnumType.STRING)
+    private Temperature temperature;
 
     @Column
-    private Integer maxTemperature;
+    private String image;
 
     @Column
-    private String allergies;
+    private Integer size;
 
 
     public Integer getId() {
@@ -75,15 +77,15 @@ public class JpaPlant {
         return forbiddenForAnimals;
     }
 
-    public Integer getMinTemperature() {
-        return minTemperature;
+    public Temperature getTemperature() {
+        return temperature;
     }
 
-    public Integer getMaxTemperature() {
-        return maxTemperature;
+    public String getImage() {
+        return image;
     }
 
-    public String getAllergies() {
-        return allergies;
+    public Integer getSize() {
+        return size;
     }
 }
