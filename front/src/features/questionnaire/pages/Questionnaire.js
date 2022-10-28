@@ -31,8 +31,7 @@ export default function Questionnaire() {
 
     const renderResponse = (response) => {
         return <div key={response.value} className="response">
-            <div className="img">
-
+            <div className="img" style={{backgroundImage: `url(${response.imgSrc})`}}>
             </div>
             <button className="response-btn" onClick={() => saveStepResponseAndGoToTheNextStep(response)}>
                 {response.label}
