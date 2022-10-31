@@ -1,10 +1,10 @@
-import { useLocation, Link } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+import {useLocation, Link} from 'react-router-dom'
+import {useState, useEffect} from 'react';
 
 export default function Result() {
 
     const [results, setResults] = useState([]);
-    const { state: searchRequest } = useLocation();
+    const {state: searchRequest} = useLocation();
 
     useEffect(() => {
         (async () => {
@@ -23,11 +23,14 @@ export default function Result() {
 
     const displayResult = (result) => {
         return <div className="plant">
-            <img className="image" src={result.image} alt={result.name} />
+            <img className="image" src={result.image} alt={result.name}/>
             <div className="description">
                 <h2>{result.name}</h2>
                 <p>{result.description}</p>
-                <button className="button purchase-btn">Commander</button>
+                <button className="button purchase-btn"
+                        onClick={() => window.open('https://www.truffaut.com/hydrangea-winter-surprise-hauteur-90-120-cm-conteneur-3l-echelle-423174.html')}
+                        i>Commander
+                </button>
             </div>
         </div>
     };
@@ -45,10 +48,10 @@ export default function Result() {
     }
 
     return <div className="result-page-container">
-        { results.length ?<div className="result-list">
+        {results.length ? <div className="result-list">
             <h1>Voici la liste de vos plantes idéales</h1>
             {results.map(result => displayResult(result))}
-        </div> : displayEmpty() }
+        </div> : displayEmpty()}
         <div className="right-image">
             <button className="button">Découvrir le blog</button>
         </div>
